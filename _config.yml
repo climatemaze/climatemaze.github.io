@@ -1,0 +1,10 @@
+
+title: Climate Maze
+description: Mapping the 
+baseurl: "/"
+
+url: "https://climatemaze.github.io"
+github_username: climatemaze
+
+# Build settings
+markdown: kramdown
