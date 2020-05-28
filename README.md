@@ -1,1 +1,0 @@
-# Climate Maze - Team ESNAware
