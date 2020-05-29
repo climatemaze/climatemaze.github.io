@@ -335,11 +335,10 @@ p {
 div.tooltip {
     position: absolute;
     text-align: center;
-    width: 30px;
+    width: 50px;
     height: 15px;
     padding: 2px;
     font: 12px sans-serif;
-    background: lightsteelblue;
     border: 0px;
     border-radius: 8px;
     pointer-events: none;
@@ -407,31 +406,6 @@ div.tooltip {
 	background-color: #dddddd;
 }
 
-.h-subitem:nth-child(1) {
-	order: 0;
-	flex-basis: 10%;
-}
-
-.h-subitem:nth-child(2) {
-	order: 1;
-	flex-basis: 90%;
-    padding: 0px 35px 0px 35px;
-	align-items: center;
-	color: black;
-	overflow: hidden;
-	text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    text-align: justify;
-}
-
-.lorem {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    text-align: justify;
-}
-
 .v-subitem-a:nth-child(2) {
 	order: 1;
 	flex: 0 0 100%;
@@ -450,15 +424,54 @@ div.tooltip {
 	background-color: #dddddd;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.h-subitem:nth-child(1) {
+	order: 0;
+	flex-basis: 10%;
+}
+
+.h-subitem:nth-child(2) {
+	order: 1;
+	flex-basis: 90%;
+    padding: 0px 35px 0px 35px;
+	align-items: center;
+	color: black;
+    text-align: justify;
+  	min-height: 0;
+    height: 12vh;
+	overflow-y: scroll;
+}
+
+.h-subitem-b:nth-child(1) {
+	order: 0;
+	flex: 0 0 25%;
+}
+
+.h-subitem-b:nth-child(2) {
+	order: 1;
+	flex: 0 0 25%;
+}
+
+.h-subitem-b:nth-child(3) {
+	order: 2;
+	flex: 0 0 50%;
+}
+
+.lorem {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-align: justify;
 }
 
 .hide-scroll {
 	width: 100%;
 	height: 100%;
-    overflow-y: scroll;
-    box-sizing: content-box;
-    padding-right: 17px;
+  overflow-y: scroll;
+  box-sizing: content-box;
+  padding-right: 17px;
 }
 
 .inner-scroll {
@@ -496,4 +509,49 @@ div.tooltip {
 #graph_panel, #data_panel {
 	transition: 0.3s;
 	overflow: hidden
+}
+
+.content{
+	font-size: 16px;
+	-webkit-columns: 3;
+     -moz-columns: 3;
+          columns: 3;
+  padding-left: 0;
+	-webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+               break-inside: avoid;
+}
+
+.keywords {
+	display: inline-block;
+}
+
+ul li {
+	break-inside: avoid-column;
+	page-break-inside: avoid-column;
+	-webkit-column-break-inside: avoid-column;
+}
+
+div.wiki_panel {
+   position: relative
+}
+
+div.wiki_panel p {
+   margin: 0;
+   position: absolute;               /* 2 */
+   top: 50%;                         /* 3 */
+   transform: translate(0, -50%);
+	 margin-right: 40px;
+}
+
+#content-keywords {
+	break-after:column;
+  display:block;
+}
+
+div.image-content {
+	float: none;
+	margin-left: 0;
+	margin-right: 0;
+	object-fit: contain;
 }
